@@ -53,7 +53,7 @@ module "rds" {
 
 module "ecr" {
   source   = "app.terraform.io/atreviso/ecr/aws"
-  version  = "1.0.0"
+  version  = "1.0.1"
   ecr_name = var.ecr_name
   region   = var.region
   env      = var.env
