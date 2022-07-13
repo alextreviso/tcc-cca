@@ -26,3 +26,5 @@ variable "task_memory" {}
 variable "task_cpu" {}
 variable "healthcheck_url" {}
 variable "private_access" {}
+
+variable "app_name" {}

@@ -1,3 +1,5 @@
+app_name              = "atreviso"
+
 profile               = "ilg-atreviso"
 vpc_name              = "atreviso"
 vpc_cidr              = "10.0.0.0/19"
