@@ -30,26 +30,26 @@ module "vpc" {
   internet_gateway      = module.vpc.internet_gateway
 }
 
-# module "rds" {
-#   source              = "app.terraform.io/atreviso/rds/aws"
-#   version             = "1.0.0"
-#   database_name       = var.database_name
-#   allowed_cidrs       = var.allowed_cidrs
-#   engine              = var.engine
-#   engine_version      = var.engine_version
-#   db_username         = var.db_username
-#   db_password         = var.db_password
-#   db_port             = var.db_port
-#   deletion_protection = var.deletion_protection
-#   vpc_id              = module.vpc.vpc_id
-#   private_subnets_ids = module.vpc.public_subnets
-#   storage_type        = var.storage_type
-#   allocated_storage   = var.allocated_storage
-#   instance_class      = var.instance_class
-#   publicly_accessible = var.publicly_accessible
-#   region              = var.region
-#   env                 = var.env
-# }
+module "rds" {
+  source              = "app.terraform.io/atreviso/rds/aws"
+  version             = "1.0.0"
+  database_name       = var.database_name
+  allowed_cidrs       = var.allowed_cidrs
+  engine              = var.engine
+  engine_version      = var.engine_version
+  db_username         = var.db_username
+  db_password         = var.db_password
+  db_port             = var.db_port
+  deletion_protection = var.deletion_protection
+  vpc_id              = module.vpc.vpc_id
+  private_subnets_ids = module.vpc.public_subnets
+  storage_type        = var.storage_type
+  allocated_storage   = var.allocated_storage
+  instance_class      = var.instance_class
+  publicly_accessible = var.publicly_accessible
+  region              = var.region
+  env                 = var.env
+}
 
 module "ecr" {
   source   = "app.terraform.io/atreviso/ecr/aws"
