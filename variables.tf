@@ -24,6 +24,5 @@ variable "ecr_name" {}
 variable "container_port" {}
 variable "task_memory" {}
 variable "task_cpu" {}
-variable "allowed_cidrs" {}
 variable "healthcheck_url" {}
 variable "private_access" {}
