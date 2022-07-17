@@ -17,7 +17,8 @@ provider "aws" {
 }
 
 module "vpc" {
-  source                = "../modules/terraform-aws-vpc/"
+  source                = "app.terraform.io/atreviso/vpc/aws"
+  version               = "1.0.1"
   vpc_name              = var.vpc_name
   vpc_cidr              = var.vpc_cidr
   public_subnets_cidrs  = var.public_subnets_cidrs
