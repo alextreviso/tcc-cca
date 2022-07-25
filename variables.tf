@@ -28,4 +28,5 @@ variable "healthcheck_url" {}
 variable "private_access" {}
 
 variable "app_name" {}
-variable "certificate" {}
+variable "domain" {}
+variable "dns_name" {}
