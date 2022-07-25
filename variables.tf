@@ -28,3 +28,4 @@ variable "healthcheck_url" {}
 variable "private_access" {}
 
 variable "app_name" {}
+variable "certificate" {}

@@ -64,7 +64,7 @@ module "ecr" {
 
 module "ecs" {
   source              = "app.terraform.io/atreviso/ecs/aws"
-  version             = "1.0.6"
+  version             = "1.0.7"
   app_name            = var.app_name
   env                 = var.env
   region              = var.region
@@ -78,4 +78,5 @@ module "ecs" {
   healthcheck_url     = var.healthcheck_url
   private_access      = var.private_access
   repository_url      = module.ecr.repository_url
+  certificate         = var.certificate
 }

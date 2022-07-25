@@ -28,3 +28,5 @@ task_memory         = 1024
 task_cpu            = 512
 healthcheck_url     = "/"
 private_access      = false
+
+certificate         = "*.alextreviso-tcc-cca.link"
