@@ -64,7 +64,7 @@ module "ecr" {
 
 module "ecs" {
   source              = "app.terraform.io/atreviso/ecs/aws"
-  version             = "1.0.8"
+  version             = "1.0.9"
   app_name            = var.app_name
   env                 = var.env
   region              = var.region
