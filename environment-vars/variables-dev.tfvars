@@ -23,7 +23,7 @@ allocated_storage           = "1000"
 
 ecr_name                    = "atreviso"
 
-container_port      = 8080
+container_port      = 80
 task_memory         = 1024
 task_cpu            = 512
 healthcheck_url     = "/"
