@@ -23,8 +23,8 @@ allocated_storage           = "1000"
 
 ecr_name                    = "atreviso"
 
-container_port      = 80
+container_port      = 3000
 task_memory         = 1024
 task_cpu            = 512
-healthcheck_url     = "/swagger/index.html"
+healthcheck_url     = "/"
 private_access      = false
