@@ -82,7 +82,7 @@ module "ecs" {
 
 module "api-gateway" {
   source              = "app.terraform.io/atreviso/api-gateway/aws"
-  version             = "1.0.1"
+  version             = "1.0.2"
   app_name            = var.app_name
   env                 = var.env
   aws_subnet_ids      = module.vpc.private_subnets
