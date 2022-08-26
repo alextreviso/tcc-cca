@@ -26,5 +26,5 @@ ecr_name                    = "atreviso"
 container_port      = 80
 task_memory         = 1024
 task_cpu            = 512
-healthcheck_url     = "/swagger/index.html"
-private_access      = false
+healthcheck_url     = "/"
+private_access      = true
