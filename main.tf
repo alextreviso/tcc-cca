@@ -64,7 +64,7 @@ module "ecr" {
 
 module "ecs" {
   source              = "app.terraform.io/atreviso/ecs/aws"
-  version             = "2.0.0"
+  version             = "2.0.1"
   app_name            = var.app_name
   env                 = var.env
   region              = var.region
@@ -82,9 +82,10 @@ module "ecs" {
 
 module "api-gateway" {
   source              = "app.terraform.io/atreviso/api-gateway/aws"
-  version             = "1.0.0"
+  version             = "1.0.1"
   app_name            = var.app_name
   env                 = var.env
   aws_subnet_ids      = module.vpc.private_subnets
   alb_listener_arn    = module.ecs.alb_listener_arn
+  sg_alb_id           = module.ecs.sg_alb_id
 }
