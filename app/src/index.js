@@ -40,7 +40,7 @@ app.post('/sensors', (req, res) => {
 });
 
 /* App listen */
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log(`nodejs-backend is running`);
-  console.log(`open in http://127.0.0.1:3000/sensors`);
+  console.log(`open in http://127.0.0.1:80/sensors`);
 });

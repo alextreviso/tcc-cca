@@ -80,12 +80,12 @@ module "ecs" {
   repository_url      = module.ecr.repository_url
 }
 
-# module "api-gateway" {
-#   source              = "app.terraform.io/atreviso/api-gateway/aws"
-#   version             = "1.0.2"
-#   app_name            = var.app_name
-#   env                 = var.env
-#   aws_subnet_ids      = module.vpc.private_subnets
-#   alb_listener_arn    = module.ecs.alb_listener_arn
-#   sg_alb_id           = module.ecs.sg_alb_id
-# }
+module "api-gateway" {
+  source              = "app.terraform.io/atreviso/api-gateway/aws"
+  version             = "1.0.2"
+  app_name            = var.app_name
+  env                 = var.env
+  aws_subnet_ids      = module.vpc.private_subnets
+  alb_listener_arn    = module.ecs.alb_listener_arn
+  sg_alb_id           = module.ecs.sg_alb_id
+}
