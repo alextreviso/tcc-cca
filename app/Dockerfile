@@ -4,4 +4,4 @@ WORKDIR /usr/local/app/src/
 RUN cd /usr/local/app/src/
 RUN npm install
 ENTRYPOINT npm start
-EXPOSE 8080
+EXPOSE 80
