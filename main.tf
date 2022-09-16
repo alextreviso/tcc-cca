@@ -7,7 +7,7 @@ terraform {
   cloud {
     organization = "atreviso"
     workspaces {
-      name = "alex-ilegra"
+      name = "atreviso-tcc-cca"
     }
   }
 }
