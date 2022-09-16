@@ -1,8 +1,9 @@
+variable "app_name" {}
+
 variable "vpc_name" {}
 variable "vpc_cidr" {}
 variable "region" {}
 variable "env" {}
-variable "profile" {}
 variable "public_subnets_cidrs" {}
 variable "private_subnets_cidrs" {}
 
@@ -26,5 +27,3 @@ variable "task_memory" {}
 variable "task_cpu" {}
 variable "healthcheck_url" {}
 variable "private_access" {}
-
-variable "app_name" {}
