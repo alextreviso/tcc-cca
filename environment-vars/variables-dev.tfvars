@@ -1,4 +1,4 @@
-app_name = "atreviso"
+app_name = "atreviso-tcc-cca"
 
 profile               = "ilg-atreviso"
 vpc_name              = "atreviso"
@@ -9,19 +9,19 @@ region                = "us-east-1"
 env                   = "dev"
 
 database_name       = "atreviso"
-allowed_cidrs       = ["0.0.0.0/0"]
+allowed_cidrs       = ["10.0.0.0/19"]
 engine              = "postgres"
 engine_version      = "13.4"
-db_username         = "atreviso"
+db_username         = "atreviso-tcc-cca"
 db_password         = "admin1234"
 db_port             = "5432"
 deletion_protection = true
 storage_type        = "gp2"
 instance_class      = "db.t3.micro"
 publicly_accessible = false
-allocated_storage   = "1000"
+allocated_storage   = "30"
 
-ecr_name = "atreviso"
+ecr_name = "atreviso-tcc-cca"
 
 container_port  = 80
 task_memory     = 1024
