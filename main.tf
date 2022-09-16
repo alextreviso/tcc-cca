@@ -7,7 +7,7 @@ terraform {
   cloud {
     organization = "atreviso"
     workspaces {
-      name = "tcc-cca"
+      name = "alex-ilegra"
     }
   }
 }
@@ -45,7 +45,7 @@ module "rds" {
   db_port             = var.db_port
   deletion_protection = var.deletion_protection
   vpc_id              = module.vpc.vpc_id
-  private_subnets_ids = module.vpc.public_subnets
+  private_subnets_ids = module.vpc.private_subnets
   storage_type        = var.storage_type
   allocated_storage   = var.allocated_storage
   instance_class      = var.instance_class
@@ -64,7 +64,7 @@ module "ecr" {
 
 module "ecs" {
   source              = "app.terraform.io/atreviso/ecs/aws"
-  version             = "1.0.6"
+  version             = "2.0.1"
   app_name            = var.app_name
   env                 = var.env
   region              = var.region
@@ -78,4 +78,14 @@ module "ecs" {
   healthcheck_url     = var.healthcheck_url
   private_access      = var.private_access
   repository_url      = module.ecr.repository_url
+}
+
+module "api-gateway" {
+  source           = "app.terraform.io/atreviso/api-gateway/aws"
+  version          = "1.0.2"
+  app_name         = var.app_name
+  env              = var.env
+  aws_subnet_ids   = module.vpc.private_subnets
+  alb_listener_arn = module.ecs.alb_listener_arn
+  sg_alb_id        = module.ecs.sg_alb_id
 }
